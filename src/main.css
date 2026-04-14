@@ -19,6 +19,14 @@
 }
 
 
+@font-face {
+  font-family: "Osake";
+  src: url("../public/fonts/Osake.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 
 :root {
