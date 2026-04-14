@@ -5,8 +5,44 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@font-face {
+  font-family: "Graft";
+  src: url("../public/fonts/THE_JACATRA.otf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "Axe";
+  src: url("../public/fonts/axewielder.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "Osake";
+  src: url("../public/fonts/Osake.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Shibal";
+  src: url("../public/fonts/Kids\ Magazine.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 :root {
-    --bg-color: #ffffff;
+    --bg-color: #e0e0e0;
     --text-main: #111111;
     --accent: #000000;
 }
@@ -96,10 +132,10 @@ body {
 }
 /* Grid Background */
 .grid-bg {
-    background-image:
-        linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
+  background-image: url("/public/hehe2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 /* Map Styles */
 .map-svg path {
@@ -158,6 +194,24 @@ body {
     will-change: transform;
 }
 
+
+
+/* FOR THE PROJECT WORKS  */ 
+
+.work-item:hover video {
+    filter: grayscale(0) !important;
+}
+
+.work-item:hover .bg-white\/10 {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Smooth video transitions */
+.work-item video {
+    transition: filter 0.7s ease, transform 0.7s ease, opacity 0.7s ease;
+}
+
 /* Custom Tailwind Animations */
 @layer utilities {
     .animate-spin-slow { animation: spin 20s linear infinite; }
@@ -165,3 +219,549 @@ body {
     @keyframes spin { to { transform: rotate(360deg); } }
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 }
+
+
+ .ts-header-label {
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      color: #555;
+      text-transform: uppercase;
+      text-align: center;
+      margin: 0 0 6px;
+      font-family: monospace;
+    }
+    .ts-header-title {
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      margin: 0 0 2.5rem;
+      letter-spacing: -0.02em;
+    }
+    .ts-track-wrapper {
+      overflow: hidden;
+      cursor: grab;
+      position: relative;
+      user-select: none;
+    }
+    .ts-track-wrapper:active { cursor: grabbing; }
+    .ts-track {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      will-change: transform;
+      padding: 8px 0 12px;
+    }
+  .ts-card {
+  flex-shrink: 0;
+  width: 140px;
+  height: 150px;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.ts-card:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2),
+              0 0 30px rgba(255, 255, 255, 0.1),
+              0 0 60px rgba(255, 255, 255, 0.05);
+}
+.ts-card-icon {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ts-card:hover .ts-card-icon { transform: scale(1.15) rotate(6deg); }
+    .ts-card-icon svg { width: 52px; height: 52px; }
+    .ts-card-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+      transition: color 0.25s;
+      letter-spacing: 0.02em;
+      font-family: monospace;
+    }
+    .ts-card-sub {
+      font-size: 10px;
+      color: #555;
+      position: relative;
+      z-index: 1;
+      transition: color 0.25s;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: -6px;
+      font-family: monospace;
+    }
+    .ts-fade-left, .ts-fade-right {
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 80px;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .ts-fade-left  { left: 0;  background: linear-gradient(to right, #000, transparent); }
+    .ts-fade-right { right: 0; background: linear-gradient(to left,  #000, transparent); }
+
+
+    /*Works Section */ 
+
+@media (max-width: 767px) {
+    #works {
+        height: auto !important;
+    }
+    #works-container {
+        height: auto !important;
+        position: relative !important;
+        top: unset !important;
+        overflow: visible !important;
+        display: block !important;
+    }
+ 
+    /* Cards: full width, tall enough to show all content */
+    .work-item {
+        width: 100% !important;
+        min-width: unset !important;
+        height: 420px !important;
+        margin-top: 0 !important;
+    }
+    /* Keep card text sizes from desktop intact */
+    .work-item h3 {
+        font-size: 1.875rem !important;
+    }
+    /* Badge tags wrap nicely */
+    .work-item .flex-wrap {
+        flex-wrap: wrap !important;
+    }
+}
+
+
+/*Works text responsiveness  */ 
+
+
+/* Scale down internal padding on smaller cards */
+@media (max-width: 767px) {
+  .work-item .absolute.bottom-0 {
+    padding: 1rem !important;
+  }
+
+  /* Shrink heading */
+  .work-item h3 {
+    font-size: 1.25rem !important;
+    margin-bottom: 0.25rem !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Shrink description text */
+  .work-item p.text-gray-300 {
+    font-size: 0.7rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Tighten the tech stack section */
+  .work-item .border-t {
+    padding-top: 0.5rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  /* Hide the "Tech Stack" label row to save space */
+  .work-item .border-t .flex.items-center.gap-2.mb-2 {
+    display: none !important;
+  }
+
+  /* Shrink tech badge tags */
+  .work-item .flex-wrap span {
+    font-size: 0.6rem !important;
+    padding: 2px 6px !important;
+  }
+
+  /* Make the gap between badge + description tighter */
+  .work-item .mb-2 {
+    margin-bottom: 0.25rem !important;
+  }
+
+  /* Arrow icon row */
+  .work-item .flex.justify-between {
+    margin-top: 0.25rem !important;
+  }
+}
+
+/* Extra tight for very short cards (landscape phones, small screens) */
+@media (max-width: 480px) {
+  .work-item {
+    height: 320px !important;
+  }
+
+  .work-item h3 {
+    font-size: 1.1rem !important;
+  }
+
+  .work-item p.text-gray-300 {
+    display: none !important; /* hide description on tiny screens */
+  }
+}
+/*Other sections Adjustments   */ 
+
+        /* ── Original styles — completely untouched ── */
+        .achievement-badge { transition: transform 0.3s ease; }
+        .achievement-badge:hover { transform: scale(1.1); }
+        .education-block { transition: all 0.3s ease; cursor: pointer; }
+        .education-block:hover { fill: #000; }
+        .timeline-item {
+            transition: transform 0.3s ease;
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        .timeline-item.visible { opacity: 1; transform: translateX(0); }
+        .timeline-item:hover { transform: translateX(10px); }
+
+        /* ════════════════════════════════════════════
+           RESPONSIVE-ONLY ADDITIONS
+           Nothing here changes colours, fonts,
+           animations, or visual design.
+           Only fixes layout/overflow for mobile.
+        ════════════════════════════════════════════ */
+
+        /* Prevent global horizontal overflow */
+        html, body { overflow-x: hidden; }
+
+        /* ── Hamburger button (shown only on mobile) ── */
+        #nav-hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            color: inherit;
+        }
+        #nav-hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: currentColor;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        #nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        #nav-hamburger.open span:nth-child(2) { opacity: 0; }
+        #nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* ── Full-screen mobile menu overlay ── */
+        #mobile-nav-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: #000;
+            z-index: 200;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+        #mobile-nav-overlay.open { display: flex; }
+        #mobile-nav-overlay a {
+            color: #fff;
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-decoration: none;
+            font-family: monospace;
+            letter-spacing: -0.02em;
+            transition: opacity 0.2s;
+        }
+        #mobile-nav-overlay a:hover { opacity: 0.6; }
+        #mobile-close-btn {
+            position: absolute;
+            top: 1.5rem; right: 1.5rem;
+            background: none; border: none;
+            color: #fff; font-size: 2rem;
+            cursor: pointer; line-height: 1;
+        }
+        #mobile-nav-badge {
+            margin-top: 0.5rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 0.2rem 0.75rem;
+            border-radius: 9999px;
+            color: #fff;
+            font-family: monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.05em;
+        }
+
+
+        #works {
+  background: #e8e8e8;
+  box-shadow: inset 6px 6px 12px rgba(0,0,0,0.15),
+              inset -6px -6px 12px rgba(255,255,255,0.9);
+}
+
+#works-title {
+  color: transparent !important;
+  -webkit-text-stroke: 1px rgba(0,0,0,0.08);
+  text-shadow:
+    2px 2px 4px rgba(255,255,255,0.9),
+    -1px -1px 3px rgba(0,0,0,0.15);
+}
+
+.work-item {
+  box-shadow:
+    inset 2px 2px 5px rgba(255,255,255,0.6),
+    inset -2px -2px 5px rgba(0,0,0,0.15),
+    4px 4px 10px rgba(0,0,0,0.1);
+}
+
+        /* ── Mobile-only year label inside timeline ── */
+        .timeline-year-mobile { display: none; }
+
+        /* ══════ BREAKPOINT: ≤ 767px (phones) ══════ */
+        @media (max-width: 767px) {
+
+            /* Show hamburger, hide desktop nav items */
+            #nav-hamburger       { display: flex !important; }
+            .nav-desktop-links   { display: none !important; }
+            .nav-desktop-badge   { display: none !important; }
+
+            /* ── Hero ──
+               Name: clamp so it never overflows its column */
+            .hero-name-text {
+                font-size: clamp(4rem, 17vw, 6.5rem) !important;
+                line-height: 0.85 !important;
+            }
+            /* Hero image: shrink so it fits above the text */
+            .hero-img-container {
+                width: min(260px, 72vw) !important;
+                max-width: none !important;
+            }
+            /* CTA buttons: wrap instead of overflow */
+            .hero-cta-group {
+                flex-wrap: wrap !important;
+                gap: 0.75rem !important;
+            }
+            /* Clip the big parallax "DEV" background word */
+            .hero-bg-word { overflow: hidden; }
+
+            /* ── Marquee text: scale down so it doesn't blow out ── */
+            .marquee-track span {
+                font-size: 2.5rem !important;
+                margin-left: 1.5rem !important;
+                margin-right: 1.5rem !important;
+            }
+
+            /* ── Education: tighten horizontal padding ── */
+            #education .container {
+                padding-left: 1.25rem !important;
+                padding-right: 1.25rem !important;
+            }
+            /* Stats numbers */
+            #edu-degree, #edu-gpa { font-size: 2.25rem !important; }
+
+            /* ── Timeline: collapse the 3-column grid into a single block ──
+               Hide the date and dot columns; show date inline above title */
+            .timeline-item .tl-date-col { display: none !important; }
+            .timeline-item .tl-dot-col  { display: none !important; }
+            .timeline-item .tl-content-col {
+                grid-column: span 12 !important;
+                padding-left: 0 !important;
+            }
+            /* Left border replaces the dot visually */
+            .timeline-item .tl-content-col {
+                border-left: 3px solid #000;
+                padding-left: 1rem !important;
+            }
+            .timeline-year-mobile { display: block !important; }
+
+            /* ── Tech stacks: 3-col stays, just tighten padding ── */
+            .tech-grid {
+                padding-left: 0.75rem !important;
+                padding-right: 0.75rem !important;
+                gap: 0.5rem !important;
+            }
+            /* Shrink logos so cards don't get too tall */
+            .tech-logo { width: 3rem !important; height: 3rem !important; }
+
+            /* ── Works: disable horizontal sticky scroll; stack cards vertically ── */
+    @media (max-width: 767px) {
+
+ #works-title-wrap {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    height: 100% !important;
+  }
+  #works-title {
+    writing-mode: vertical-rl !important;
+    text-orientation: mixed !important;
+    transform: rotate(180deg) !important;
+    font-size: 5rem !important;
+    padding: 0 !important;
+    opacity: 0.08 !important;
+  }
+
+    #works {
+        height: auto !important;
+    }
+    #works-container {
+        height: auto !important;
+        position: relative !important;
+        top: unset !important;
+        overflow-x: auto !important;
+        overflow-y: visible !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+    }
+    #works-wrapper {
+        flex-direction: row !important;
+        gap: 1rem !important;
+        padding: 5rem 1rem 2rem !important;
+        align-items: center !important;
+        min-width: max-content !important;
+    }
+    .work-item {
+        width: 80vw !important;
+        min-width: 80vw !important;
+        height: 65vw !important;
+        min-height: 280px !important;
+        max-height: 400px !important;
+        margin-top: 0 !important;
+    }
+}
+             /* ── Skills section: full-width cards ── */
+            .service-card { width: 100% !important; }
+
+            /* ── Contact ── */
+            .contact-heading {
+                font-size: clamp(2.5rem, 13vw, 5.5rem) !important;
+                line-height: 1.05 !important;
+            }
+            .contact-icons   { gap: 1.25rem !important; }
+            .contact-icon-btn {
+                width: 3.75rem !important;
+                height: 3.75rem !important;
+                font-size: 1.4rem !important;
+            }
+        }
+
+        /* ══════ Very small phones ≤ 380px ══════ */
+        @media (max-width: 380px) {
+            .hero-name-text  { font-size: 3.75rem !important; }
+            .contact-heading { font-size: 2.25rem !important; }
+            /* 2-col grid for tiniest phones */
+            .tech-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+        } 
+
+
+    /*Modal SHITS */ 
+
+ #modal-details > div {
+    @apply flex flex-col gap-1.5;
+  }
+
+  #modal-details .label {
+    @apply text-xs font-600 uppercase tracking-widest text-gray-700;
+  }
+
+  #modal-details .value {
+    @apply text-base font-500 text-black;
+  }
+
+  #modal-tags > div {
+    @apply flex flex-col items-center justify-center gap-2 p-3 bg-black/4 border border-black/8 rounded-lg text-sm font-500 text-gray-800 transition-all duration-200 hover:bg-black/8 hover:border-black/15 cursor-pointer;
+  }
+
+  #modal-tags .tech-icon {
+    @apply text-2xl;
+  }
+
+  #modal-tags .tech-name {
+    @apply text-xs font-500;
+  }
+
+  @media (max-width: 768px) {
+    #modal-box {
+      grid-template-columns: 1fr !important;
+      min-height: auto !important;
+    }
+    
+    #modal-details {
+      grid-template-columns: 1fr !important;
+    }
+
+    #modal-tags {
+      grid-template-columns: 1fr !important;
+    }
+    /* Mobile responsive styles */
+  @media (max-width: 768px) {
+    #modal-box {
+      grid-template-columns: 1fr !important;
+      height: auto !important;
+      max-width: 90vw !important;
+    }
+
+    #modal-box > div:first-child {
+      display: none !important;
+    }
+
+    #modal-box > div:last-child {
+      padding: 24px 16px !important;
+    }
+
+    #modal-desc {
+      font-size: 13px !important;
+      padding-right: 0 !important;
+    }
+
+    #modal-image {
+      display: none !important;
+    }
+
+    #modal-title {
+      font-size: 18px !important;
+    }
+
+    #modal-badge {
+      font-size: 10px !important;
+      padding: 4px 10px !important;
+    }
+
+    #modal-tags {
+      grid-template-columns: 2fr 2fr !important;
+      gap: 8px !important;
+    }
+}
+  }
+
+
+  #works-container {
+  --scroll-progress: 0;
+}
+
+@media (max-width: 767px) {
+  #works-wrapper > div:first-child h2 {
+    font-size: 3.5rem !important;
+    transform: rotateY(-20deg) rotateX(6deg) !important;
+    opacity: 0.07 !important;
+  }
+}
+
+  
+    
