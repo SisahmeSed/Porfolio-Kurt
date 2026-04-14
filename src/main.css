@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Mono:wght@400;700&display=swap');
 
-/* Tailwind Directives - Required for PostCSS processing */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 
 @font-face {
   font-family: "Graft";
@@ -24,21 +19,6 @@
 }
 
 
-@font-face {
-  font-family: "Osake";
-  src: url("../public/fonts/Osake.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Shibal";
-  src: url("../public/fonts/Kids\ Magazine.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
 
 
 :root {

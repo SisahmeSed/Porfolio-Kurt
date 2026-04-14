@@ -1,3 +1,5 @@
+
+
 // Text Animation Hero Section 
 const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*!?';
 
@@ -408,21 +410,21 @@ const projects = [
     link: "https://yourlink.com"
   },
   {
-    num: "03", title: "ESPYREAL", badge: "APP", video: "/public/ESPYREAL.mp4", image: "/neon-identity-brand-logo.jpg",
+    num: "03", title: "ESPYREAL", badge: "APP", image: "/public/beni.png",
     desc: "A multi-currency identifier mobile app using machine learning and computer vision to recognize banknotes in real time.",
     stackLabel: "Tools Used", tags: ["React Native", "TensorFlow.js", "Python"],
     details: [{ label: "Type", value: "Mobile App" }, { label: "Year", value: "2023" }, { label: "Role", value: "Developer" }, { label: "Status", value: "Beta" }],
     link: "https://yourlink.com"
   },
   {
-    num: "04", title: "ShoeFlips", badge: "UI/UX", video: null, image: "/your-shoeflips-image.jpg",
+    num: "04", title: "ShoeFlips", badge: "UI/UX", video: null, image: "/public/beni.png",
     desc: "A shoe inventory system built to easily track shoe quantity and availability for resellers.",
     stackLabel: "Design Tools", tags: ["Laravel", "Spring Boot", "CSS"],
     details: [{ label: "Type", value: "Dashboard UI" }, { label: "Year", value: "2024" }, { label: "Role", value: "UI Designer" }, { label: "Status", value: "Design" }],
     link: "https://yourlink.com"
   },
   {
-    num: "05", title: "Najmat Cleaning", badge: "WebApp", video: null, image: "/your-najmat-image.jpg",
+    num: "05", title: "Najmat Cleaning", badge: "WebApp", video: null, image: "/public/beni.png",
     desc: "A minimalist service management dashboard for a cleaning business with booking, staff assignment, and job tracking.",
     stackLabel: "Design Tools", tags: ["React", "Node.js", "Tailwind"],
     details: [{ label: "Type", value: "Dashboard UI" }, { label: "Year", value: "2024" }, { label: "Role", value: "UI Designer" }, { label: "Status", value: "Design" }],
